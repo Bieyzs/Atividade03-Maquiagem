@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glow Beauty - Maquiagem & Skincare</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23c8a2c8'/><path d='M50 15 C35 15 25 30 25 45 C25 65 40 75 50 85 C60 75 75 65 75 45 C75 30 65 15 50 15Z' fill='%23fff'/><circle cx='50' cy='45' r='8' fill='%23c8a2c8'/></svg>">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Loader -->
+    <div id="loader">
+        <div class="loader-content">
+            <div class="loader-circle"></div>
+            <p>Glow Beauty</p>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="header-top">
+            <p>Frete gratis para compras acima de R$150 | Parcelamento em ate 10x</p>
+        </div>
+        <nav class="navbar">
+            <a href="#home" class="logo">
+                <svg class="logo-icon" viewBox="0 0 60 60" width="36" height="36">
+                    <circle cx="30" cy="30" r="28" fill="none" stroke="#c8a2c8" stroke-width="2"/>
+                    <path d="M30 8 C20 8 12 18 12 28 C12 42 22 48 30 52 C38 48 48 42 48 28 C48 18 40 8 30 8Z" fill="#c8a2c8" opacity="0.3"/>
+                    <circle cx="30" cy="28" r="5" fill="#c8a2c8"/>
+                </svg>
+                <span>Glow<span class="logo-accent">Beauty</span></span>
+            </a>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="active">Inicio</a></li>
+                <li><a href="#categorias">Categorias</a></li>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#skincare">Skincare</a></li>
+                <li><a href="#videos">Videos</a></li>
+                <li><a href="#avaliacoes">Avaliacoes</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="nav-btn search-btn" id="searchBtn" aria-label="Buscar">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+                    </svg>
+                </button>
+                <button class="nav-btn cart-btn" id="cartBtn" aria-label="Carrinho">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/>
+                    </svg>
+                    <span class="cart-count">0</span>
+                </button>
+                <button class="nav-btn user-btn" id="userBtn" aria-label="Conta">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/>
+                    </svg>
+                    <span class="user-status" id="userStatus">Entrar</span>
+                </button>
+                <button class="nav-btn menu-btn" id="menuBtn" aria-label="Menu">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Search Bar -->
+        <div class="search-bar" id="searchBar">
+            <input type="text" placeholder="Buscar produtos..." id="searchInput">
+            <button id="searchClose">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-menu" id="closeMenu" aria-label="Fechar menu">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+        </button>
+        <ul>
+            <li><a href="#home">Inicio</a></li>
+            <li><a href="#categorias">Categorias</a></li>
+            <li><a href="#produtos">Produtos</a></li>
+            <li><a href="#skincare">Skincare</a></li>
+            <li><a href="#videos">Videos</a></li>
+            <li><a href="#avaliacoes">Avaliacoes</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </div>
+
+    <!-- Cart Drawer -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <h3>Seu Carrinho</h3>
+            <button class="close-cart" id="closeCart" aria-label="Fechar carrinho">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="cart-empty">Seu carrinho esta vazio</div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotalValue">R$0,00</span>
+            </div>
+            <button class="btn btn-primary checkout-btn" id="checkoutBtn">Finalizar Compra</button>
+        </div>
+    </div>
+
+    <!-- Auth Modal -->
+    <div class="modal-overlay" id="authOverlay"></div>
+    <div class="modal" id="authModal">
+        <button class="modal-close" id="authClose" aria-label="Fechar">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+        </button>
+        <div class="auth-tabs">
+            <button class="auth-tab active" data-tab="login">Entrar</button>
+            <button class="auth-tab" data-tab="register">Cadastrar</button>
+        </div>
+        <div class="auth-form-container">
+            <!-- Login Form -->
+            <form class="auth-form active" id="loginForm">
+                <h2>Bem-vinda de volta</h2>
+                <div class="form-group">
+                    <input type="email" id="loginEmail" placeholder="E-mail" required>
+                    <span class="error-msg" id="loginEmailError"></span>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="loginPassword" placeholder="Senha" required>
+                    <span class="error-msg" id="loginPasswordError"></span>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Entrar</button>
+                <div class="auth-feedback" id="loginFeedback"></div>
+            </form>
+            <!-- Register Form -->
+            <form class="auth-form" id="registerForm">
+                <h2>Crie sua conta</h2>
+                <div class="form-group">
+                    <input type="text" id="regName" placeholder="Nome completo" required>
+                    <span class="error-msg" id="regNameError"></span>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="regEmail" placeholder="E-mail" required>
+                    <span class="error-msg" id="regEmailError"></span>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="regPassword" placeholder="Senha (min. 6 caracteres)" required>
+                    <span class="error-msg" id="regPasswordError"></span>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="regConfirm" placeholder="Confirmar senha" required>
+                    <span class="error-msg" id="regConfirmError"></span>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Cadastrar</button>
+                <div class="auth-feedback" id="regFeedback"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Hero Banner -->
+    <section id="home" class="hero">
+        <div class="hero-slider">
+            <div class="hero-slide active" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);">
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <span class="hero-tag">Nova Colecao 2026</span>
+                    <h1>Descubra Sua <br><span class="highlight">Melhor Versao</span></h1>
+                    <p>Maquiagem profissional para realcar sua beleza natural com produtos de alta qualidade</p>
+                    <div class="hero-buttons">
+                        <a href="#produtos" class="btn btn-primary">Ver Produtos</a>
+                        <a href="#skincare" class="btn btn-outline">Cuidados com a Pele</a>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-slide" style="background: linear-gradient(135deg, #2d1b3d 0%, #4a2c5e 50%, #6b3a7d 100%);">
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <span class="hero-tag">Promocao Especial</span>
+                    <h1>Ate <span class="highlight">40% OFF</span> <br>em Batons</h1>
+                    <p>Aproveite descontos exclusivos em toda a linha de batons matte e hidratantes</p>
+                    <div class="hero-buttons">
+                        <a href="#produtos" class="btn btn-primary">Aproveitar Agora</a>
+                        <a href="#categorias" class="btn btn-outline">Ver Categorias</a>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-slide" style="background: linear-gradient(135deg, #1a0a2e 0%, #3d1f5c 50%, #5c2d82 100%);">
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <span class="hero-tag">Lancamento</span>
+                    <h1>Skincare <br><span class="highlight">Premium</span></h1>
+                    <p>Nova linha de cuidados com a pele com ingredientes naturais e tecnologia avancada</p>
+                    <div class="hero-buttons">
+                        <a href="#skincare" class="btn btn-primary">Explorar Skincare</a>
+                        <a href="#videos" class="btn btn-outline">Ver Tutoriais</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-dots">
+            <span class="dot active" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+        </div>
+        <button class="hero-arrow prev" id="prevSlide" aria-label="Anterior">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="hero-arrow next" id="nextSlide" aria-label="Proximo">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+    </section>
+
+    <!-- Promotional Banner -->
+    <section class="promo-banner">
+        <div class="container">
+            <div class="promo-grid">
+                <div class="promo-card fade-in">
+                    <div class="promo-icon">
+                        <svg viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="6" y="14" width="36" height="24" rx="3"/><path d="M6 20h36"/><path d="M16 14V10a8 8 0 0116 0v4"/>
+                        </svg>
+                    </div>
+                    <h3>Frete Gratis</h3>
+                    <p>Em compras acima de R$150</p>
+                </div>
+                <div class="promo-card fade-in">
+                    <div class="promo-icon">
+                        <svg viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="24" cy="24" r="18"/><polyline points="24 14 24 24 30 28"/>
+                        </svg>
+                    </div>
+                    <h3>Entrega Rapida</h3>
+                    <p>Receba em ate 3 dias uteis</p>
+                </div>
+                <div class="promo-card fade-in">
+                    <div class="promo-icon">
+                        <svg viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M24 4l6 12h13l-10 8 4 14-13-9-13 9 4-14L5 16h13z"/>
+                        </svg>
+                    </div>
+                    <h3>Produtos Premium</h3>
+                    <p>Marcas selecionadas e originais</p>
+                </div>
+                <div class="promo-card fade-in">
+                    <div class="promo-icon">
+                        <svg viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M24 44s16-8 16-20V10L24 4 8 10v14c0 12 16 20 16 20z"/><path d="M16 24l4 4 8-8"/>
+                        </svg>
+                    </div>
+                    <h3>Compra Segura</h3>
+                    <p>Pagamento 100% protegido</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section id="categorias" class="categories section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-tag">Explore</span>
+                <h2>Nossas Categorias</h2>
+                <p>Encontre os produtos ideais para cada momento</p>
+            </div>
+            <div class="categories-grid">
+    <!-- Rosto -->
+    <div class="category-card fade-in" data-category="rostos">
+        <div class="category-image" style="background: linear-gradient(135deg, #f5d5e0, #e8b4c8);">
+            <svg viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="24" cy="28" r="14"/>
+                <path d="M14 16c0-5.5 4.5-10 10-10s10 4.5 10 10"/>
+                <line x1="10" y1="26" x2="38" y2="26"/>
+                <path d="M18 34c2 2 4 3 6 3s4-1 6-3"/>
+            </svg>
+        </div>
+        <h3>Rosto</h3>
+        <p>Base, corretivo, po e mais</p>
+        <span class="category-count">24 produtos</span>
+    </div>
+
+    <!-- Labios -->
+    <div class="category-card fade-in" data-category="labios">
+        <div class="category-image" style="background: linear-gradient(135deg, #e8a0a0, #d47878);">
+            <svg viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10 24c4-7 8-9 14-9s10 2 14 9"/>
+                <path d="M10 24c4 6 8 8 14 8s10-2 14-8"/>
+                <path d="M20 29c2 1.5 4 1.5 8 0"/>
+            </svg>
+        </div>
+        <h3>Labios</h3>
+        <p>Batons, gloss e delineadores</p>
+        <span class="category-count">18 produtos</span>
+    </div>
+
+    <!-- Olhos -->
+    <div class="category-card fade-in" data-category="olhos">
+        <div class="category-image" style="background: linear-gradient(135deg, #b8a0d8, #9b7cc0);">
+            <svg viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 24c6-9 12-12 18-12s12 3 18 12c-6 9-12 12-18 12S12 33 6 24z"/>
+                <circle cx="24" cy="24" r="7"/>
+                <circle cx="24" cy="24" r="3" fill="currentColor" stroke="none"/>
+                <path d="M10 18c2-2 4-2 6-2"/>
+                <path d="M38 18c-2-2-4-2-6-2"/>
+            </svg>
+        </div>
+        <h3>Olhos</h3>
+        <p>Sombras, delineador e mascara</p>
+        <span class="category-count">32 produtos</span>
+    </div>
+
+    <!-- Unhas -->
+    <div class="category-card fade-in" data-category="unhas">
+        <div class="category-image" style="background: linear-gradient(135deg, #f0c0a0, #e0a080);">
+            <svg viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="16" y="14" width="16" height="24" rx="8"/>
+                <path d="M24 6v10"/>
+                <rect x="20" y="2" width="8" height="6" rx="2"/>
+                <line x1="16" y1="26" x2="32" y2="26"/>
+            </svg>
+        </div>
+        <h3>Unhas</h3>
+        <p>Esmaltes e cuidados</p>
+        <span class="category-count">15 produtos</span>
+    </div>
+
+    <!-- Acessorios -->
+    <div class="category-card fade-in" data-category="acessorios">
+        <div class="category-image" style="background: linear-gradient(135deg, #d4c4a0, #c0b088);">
+            <svg viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="28" y1="6" x2="16" y2="34"/>
+                <path d="M13 36c-1 3 0 7 3 8s6 0 8-3c1-2 1-5-1-7"/>
+                <line x1="22" y1="14" x2="19" y2="24"/>
+                <line x1="25" y1="10" x2="22" y2="20"/>
+            </svg>
+        </div>
+        <h3>Acessorios</h3>
+        <p>Pinceis, esponjas e kits</p>
+        <span class="category-count">20 produtos</span>
+    </div>
+
+    <!-- Skincare -->
+    <div class="category-card fade-in" data-category="skincare">
+        <div class="category-image" style="background: linear-gradient(135deg, #a0d8c0, #80c0a0);">
+            <svg viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="16" y="20" width="16" height="20" rx="8"/>
+                <path d="M24 10v12"/>
+                <path d="M20 10c0-2 2-3 4-3s4 1 4 3"/>
+                <circle cx="24" cy="30" r="3" fill="currentColor" opacity="0.4"/>
+                <path d="M18 36c0-2 3-4 6-4s6 2 6 4"/>
+            </svg>
+        </div>
+        <h3>Skincare</h3>
+        <p>Cuidados e tratamentos</p>
+        <span class="category-count">28 produtos</span>
+    </div>
+</div>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section id="produtos" class="products section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-tag">Loja</span>
+                <h2>Produtos em Destaque</h2>
+                <p>Os mais vendidos e amados pelas nossas clientes</p>
+            </div>
+
+            <div class="filter-tabs fade-in">
+                <button class="filter-btn active" data-filter="todos">Todos</button>
+                <button class="filter-btn" data-filter="rostos">Rosto</button>
+                <button class="filter-btn" data-filter="labios">Labios</button>
+                <button class="filter-btn" data-filter="olhos">Olhos</button>
+                <button class="filter-btn" data-filter="skincare">Skincare</button>
+            </div>
+
+            <div class="products-grid">
+                <!-- Product 1: Boca Rosa -->
+                <div class="product-card fade-in" data-id="1" data-category="labios" data-name="Batom Liquido Matte Boca Rosa" data-price="59.90" data-img="https://placehold.co/400x500/e8a0a0/333?text=Boca+Rosa+Batons">
+                    <div class="product-badge sale">-20%</div>
+                    <div class="product-image">
+                        <img src="https://bocarosa.com.br/cdn/shop/files/natural_translucido.png?v=1742241176&width=493" alt="Batom Liquido Matte Boca Rosa" class="prod-img">
+                        <div class="product-actions">
+                            <button class="action-btn wishlist" aria-label="Favoritar">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-brand">Boca Rosa Beauty</span>
+                        <h3>Batom Liquido Matte Velvet</h3>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <svg viewBox="0 0 20 20" width="14" height="14" fill="#d4a050"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                <svg viewBox="0 0 20 20" width="14" height="14" fill="#d4a050"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                <svg viewBox="0 0 20 20" width="14" height="14" fill="#d4a050"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                <svg viewBox="0 0 20 20" width="14" height="14" fill="#d4a050"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                <svg viewBox="0 0 20 20" width="14" height="14" fill="#d4a050"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                            </div>
+                            <span>(142)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="price-old">R$74,90</span>
+                            <span class="price-current">R$59,90</span>
+                        </div>
+                        <button class="btn-add-cart">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/>
+                            </svg>
+                            Adicionar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 2: Mari Maria -->
+                <div class="product-card fade-in" data-id="2" data-category="rostos" data-name="Base Mari Maria HD Cover" data-price="119.90" data-img="https://placehold.co/400x500/f5e6d0/333?text=Mari+Maria+Base">
+                    <div class="product-badge new">Novo</div>
+                    <div class="product-image">
+                        <img src="https://marimaria.vtexassets.com/arquivos/ids/172204/BAUNILHA.png?v=639144642924770000" alt="Base Mari Maria HD Cover" class="prod-img">
+                        <div class="product-actions">
+                            <button class="action-btn wishlist" aria-label="Favoritar">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-brand">Mari Maria</span>
+                        <h3>Base Liquida HD Cover</h3>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <svg viewBox="0 0 20 20" width="14" height="14" fill="#d4a050"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                <svg viewBox="0 0 20 20" width="14" height="14" fill="#d4a050"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                <svg viewBox="0 0 20 20" width="14" height="14" fill="#d4a050"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                <svg viewBox="0 0 20 20" width="14" height="14" fill="#d4a050"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                <svg viewBox="0 0 20 20" width="14" height="14" fill="#d4a050" opacity="0.3"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                            </div>
+                            <span>(89)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="price-current">R$119,90</span>
+                        </div>
+                        <button class="btn-add-cart">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/>
+                            </svg>
+                            Adicionar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 3: Vult -->
+                <div class="product-card fade-in" data-id="3" data-category="olhos" data-name="Paleta Vult Sunset Glow" data-price="89.90" data-img="https://placehold.co/400x500/d8c0e8/333?text=Vult+Sombra">
+                    <div class="product-image">
+                        <img src="https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_avif,fl_progressive,q_auto:eco,w_800/v1/imagens/product/102656/7129a935-3127-436b-8c7d-c6cc386bd072-102656-1.jpg" alt="Paleta Vult Sunset Glow" class="prod-img">
+                        <div class="product-actions">
+                            <button class="action-btn wishlist" aria-label="Favoritar">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-brand">Vult</span>
+                        <h3>Paleta de Sombras Sunset Glow</h3>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <svg viewBox="0 0 20 20" width="14" height="14" fill="#d4a050"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                <svg viewBox="0 0 20 20" width="14" height="14" fill="#d4a050"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                <svg viewBox="0 0 20 20" width="14" height="14" fill="#d4a050"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                <svg viewBox="0 0 20 20" width="14" height="14" fill="#d4a050"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                <svg viewBox="0 0 20 20" width="14" height="14" fill="#d4a050"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                            </div>
+                            <span>(215)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="price-current">R$89,90</span>
+                        </div>
+                        <button class="btn-add-cart">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/>
+                            </svg>
+                            Adicionar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 4: O Boticário -->
+                <div class="product-card fade-in" data-id="4" data-category="skincare" data-name="Boticário Sérum Vitamina C" data-price="129.90" data-img="https://placehold.co/400x500/c8e8d8/333?text=Boticario+Sérum">
+                    <div class="product-badge sale">-15%</div>
+                    <div class="product-image">
+                        <img src="https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_avif,fl_progressive,q_auto:eco,w_800/v1/imagens/product/B51467/a53356bb-d843-4d5f-8c52-0c381d6b5cac-bot-51467-botik-vitamina-c-serum-frontal-01.jpg" alt="Boticário Sérum Vitamina C" class="prod-img">
+                        <div class="product-actions">
+                            <button class="action-btn wishlist" aria-label="Favoritar">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-brand">O Boticário</span>
+                        <h3>Sérum Vitamina C Iluminador</h3>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <svg viewBox="0 0 20 20" width="14" height="14" fill="#d4a050"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                <svg viewBox="0 0 20 20" width="14" height="14" fill="#d4a050"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                <svg viewBox="0 0 20 20" width="14" height="14" fill="#d4a050"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                <svg viewBox="0 0 20 20" width="14" height="14" fill="#d4a050"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                <svg viewBox="0 0 20 20" width="14" height="14" fill="#d4a050"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                            </div>
+                            <span>(178)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="price-old">R$152,00</span>
+                            <span class="price-current">R$129,90</span>
+                        </div>
+                        <button class="btn-add-cart">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/>
+                            </svg>
+                            Adicionar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 5: Ruby Rose -->
+                <div class="product-card fade-in" data-id="5" data-category="rostos" data-name="Blush Ruby Rose Soft Touch" data-price="34.90" data-img="https://placehold.co/400x500/f0e0d0/333?text=Ruby+Rose+Blush">
+                    <div class="product-image">
+                        <img src="https://static.cdnlive.com.br/uploads/724/unidade/17226254045684_thumb.jpg" alt="Blush Ruby Rose Soft Touch" class="prod-img">
+                        <div class="product-actions">
+                            <button class="action-btn wishlist" aria-label="Favoritar">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-brand">Ruby Rose</span>
+                        <h3>Blush em Po Soft Touch</h3>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <svg viewBox="0 0 20 20" width="14" height="14" fill="#d4a050"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                <svg viewBox="0 0 20 20" width="14" height="14" fill="#d4a050"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                <svg viewBox="0 0 20 20" width="14" height="14" fill="#d4a050"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                <svg viewBox="0 0 20 20" width="14" height="14" fill="#d4a050"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                <svg viewBox="0 0 20 20" width="14" height="14" fill="#d4a050" opacity="0.3"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                            </div>
+                            <span>(95)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="price-current">R$34,90</span>
+                        </div>
+                        <button class="btn-add-cart">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/>
+                            </svg>
+                            Adicionar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 6: Natura Una -->
+                <div class="product-card fade-in" data-id="6" data-category="skincare" data-name="Hidratante Facial Natura Una" data-price="89.50" data-img="https://placehold.co/400x500/a8d0b8/333?text=Natura+Una">
+                    <div class="product-badge new">Novo</div>
+                    <div class="product-image">
+                        <img src="https://www.lancome.com.br/on/demandware.static/-/Sites-lancome-br-Library/pt_BR/dw6a58758e/images/LANCOME%202024/refil-idole.jpg" alt="Hidratante Facial Natura Una" class="prod-img">
+                        <div class="product-actions">
+                            <button class="action-btn wishlist" aria-label="Favoritar">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-brand">Natura Una</span>
+                        <h3>Hidratante Facial Revitalizante</h3>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <svg viewBox="0 0 20 20" width="14" height="14" fill="#d4a050"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                <svg viewBox="0 0 20 20" width="14" height="14" fill="#d4a050"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                <svg viewBox="0 0 20 20" width="14" height="14" fill="#d4a050"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                <svg viewBox="0 0 20 20" width="14" height="14" fill="#d4a050"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                <svg viewBox="0 0 20 20" width="14" height="14" fill="#d4a050"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                            </div>
+                            <span>(132)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="price-current">R$89,50</span>
+                        </div>
+                        <button class="btn-add-cart">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/>
+                            </svg>
+                            Adicionar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="products-cta fade-in">
+                <a href="#" class="btn btn-primary">Ver Todos os Produtos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skincare Section -->
+    <section id="skincare" class="skincare section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-tag">Cuidados</span>
+                <h2>Cuidados com a Pele</h2>
+                <p>Dicas e produtos para uma rotina de skincare completa</p>
+            </div>
+
+            <div class="skincare-grid">
+                <div class="skincare-card fade-in">
+                    <div class="skincare-step">01</div>
+                    <div class="skincare-image" style="background: linear-gradient(135deg, #e0f0e8, #c0d8c8);">
+                        <svg viewBox="0 0 100 100" width="60" height="60" fill="none" stroke="#60a080" stroke-width="1.5">
+                            <circle cx="50" cy="50" r="30"/><path d="M40 40 Q50 30 60 40"/><path d="M35 50 Q50 40 65 50"/><path d="M38 60 Q50 50 62 60"/>
+                        </svg>
+                    </div>
+                    <h3>Limpeza Facial</h3>
+                    <p>Remova impurezas e prepare a pele para receber os ativos. Utilize um gel de limpeza adequado ao seu tipo de pele duas vezes ao dia.</p>
+                    <a href="#" class="skincare-link">Saiba mais
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                    </a>
+                </div>
+                <div class="skincare-card fade-in">
+                    <div class="skincare-step">02</div>
+                    <div class="skincare-image" style="background: linear-gradient(135deg, #d8e8f0, #b8d0e0);">
+                        <svg viewBox="0 0 100 100" width="60" height="60" fill="none" stroke="#5080a0" stroke-width="1.5">
+                            <path d="M50 20 Q30 40 30 60 Q30 75 50 80 Q70 75 70 60 Q70 40 50 20Z"/><circle cx="50" cy="55" r="12"/><circle cx="50" cy="55" r="4" fill="#5080a0"/>
+                        </svg>
+                    </div>
+                    <h3>Tonificacao</h3>
+                    <p>Equilibre o pH da pele e minimize os poros com tonicadores suaves. Aplique com algodao ou pressione com as maos limpas.</p>
+                    <a href="#" class="skincare-link">Saiba mais
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                    </a>
+                </div>
+                <div class="skincare-card fade-in">
+                    <div class="skincare-step">03</div>
+                    <div class="skincare-image" style="background: linear-gradient(135deg, #f0e0f8, #d8c0e8);">
+                        <svg viewBox="0 0 100 100" width="60" height="60" fill="none" stroke="#8050a0" stroke-width="1.5">
+                            <rect x="30" y="25" width="40" height="55" rx="8"/><rect x="36" y="18" width="28" height="10" rx="4"/><line x1="40" y1="45" x2="60" y2="45"/><line x1="40" y1="53" x2="56" y2="53"/>
+                        </svg>
+                    </div>
+                    <h3>Serum e Tratamento</h3>
+                    <p>Aplique serums com ativos concentrados como vitamina C, acido hialuronico ou retinol para tratar necessidades especificas.</p>
+                    <a href="#" class="skincare-link">Saiba mais
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                    </a>
+                </div>
+                <div class="skincare-card fade-in">
+                    <div class="skincare-step">04</div>
+                    <div class="skincare-image" style="background: linear-gradient(135deg, #f8f0e0, #e8d8c0);">
+                        <svg viewBox="0 0 100 100" width="60" height="60" fill="none" stroke="#a08050" stroke-width="1.5">
+                            <circle cx="50" cy="50" r="25"/><circle cx="50" cy="50" r="18"/><circle cx="50" cy="50" r="10" fill="#a08050" opacity="0.3"/>
+                        </svg>
+                    </div>
+                    <h3>Hidratacao</h3>
+                    <p>Sele todos os beneficios com um hidratante adequado. Peles oleosas preferem texturas em gel, enquanto peles secas precisam de cremes ricos.</p>
+                    <a href="#" class="skincare-link">Saiba mais
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                    </a>
+                </div>
+                <div class="skincare-card fade-in">
+                    <div class="skincare-step">05</div>
+                    <div class="skincare-image" style="background: linear-gradient(135deg, #f8e8c0, #e8d0a0);">
+                        <svg viewBox="0 0 100 100" width="60" height="60" fill="none" stroke="#c0a040" stroke-width="1.5">
+                            <circle cx="50" cy="45" r="20"/><line x1="50" y1="15" x2="50" y2="10"/><line x1="50" y1="75" x2="50" y2="80"/><line x1="20" y1="45" x2="15" y2="45"/><line x1="80" y1="45" x2="85" y2="45"/>
+                        </svg>
+                    </div>
+                    <h3>Protecao Solar</h3>
+                    <p>O passo mais importante! Use FPS 30 ou superior diariamente, mesmo em dias nublados. Reaplique a cada 2 horas se estiver exposta ao sol.</p>
+                    <a href="#" class="skincare-link">Saiba mais
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Videos Section -->
+    <section id="videos" class="videos section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-tag">Tutoriais</span>
+                <h2>Videos de Beleza</h2>
+                <p>Aprenda tecnicas e descubra como usar nossos produtos</p>
+            </div>
+
+            <div class="videos-grid">
+                <div class="video-card fade-in">
+                    <div class="video-thumbnail" style="background: linear-gradient(135deg, #2d1b3d, #4a2c5e);">
+                        <div class="play-btn">
+                            <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                        </div>
+                        <span class="video-duration">12:45</span>
+                    </div>
+                    <div class="video-info">
+                        <span class="video-category">Tutorial</span>
+                        <h3>Maquiagem Completa para o Dia a Dia</h3>
+                        <p>Aprenda uma rotina rapida de 15 minutos para uma maquiagem natural e elegante.</p>
+                    </div>
+                </div>
+                <div class="video-card fade-in">
+                    <div class="video-thumbnail" style="background: linear-gradient(135deg, #1a2a3d, #2a3a5e);">
+                        <div class="play-btn">
+                            <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                        </div>
+                        <span class="video-duration">08:30</span>
+                    </div>
+                    <div class="video-info">
+                        <span class="video-category">Skincare</span>
+                        <h3>Rotina Noturna de Skincare Perfeita</h3>
+                        <p>Passo a passo completo para cuidar da pele antes de dormir com os melhores produtos.</p>
+                    </div>
+                </div>
+                <div class="video-card fade-in">
+                    <div class="video-thumbnail" style="background: linear-gradient(135deg, #3d1b1b, #5e2a2a);">
+                        <div class="play-btn">
+                            <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                        </div>
+                        <span class="video-duration">15:20</span>
+                    </div>
+                    <div class="video-info">
+                        <span class="video-category">Tendencia</span>
+                        <h3>Maquiagem Festiva - Olho Esfumado</h3>
+                        <p>Transforme seu look com um esfumado profissional perfeito para festas e eventos especiais.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-embed-area fade-in">
+                <iframe width="788" height="452" src="https://www.youtube.com/embed/fOgAI_gHr_U" title="The New Ariana Grande x Swarovski Capsule Collection​  ​" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="avaliacoes" class="reviews section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-tag">Depoimentos</span>
+                <h2>O Que Nossas Clientes Dizem</h2>
+                <p>Avaliacoes reais de quem ja experimentou nossos produtos</p>
+            </div>
+
+            <div class="reviews-slider" id="reviewsSlider">
+                <div class="reviews-track" id="reviewsTrack">
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar" style="background: linear-gradient(135deg, #c8a2c8, #a080a0);">
+                                <svg viewBox="0 0 40 40" width="24" height="24" fill="none" stroke="#fff" stroke-width="1.5">
+                                    <circle cx="20" cy="15" r="8"/><path d="M8 36 Q8 24 20 24 Q32 24 32 36"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Mariana Silva</h4>
+                                <div class="review-stars">
+                                    <svg viewBox="0 0 20 20" width="14" height="14" fill="#d4a050"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                    <svg viewBox="0 0 20 20" width="14" height="14" fill="#d4a050"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                    <svg viewBox="0 0 20 20" width="14" height="14" fill="#d4a050"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                    <svg viewBox="0 0 20 20" width="14" height="14" fill="#d4a050"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                    <svg viewBox="0 0 20 20" width="14" height="14" fill="#d4a050"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                        <p>"A base da Mari Maria e simplesmente incrivel! Dura o dia inteiro sem borrar e a cobertura e perfeita."</p>
+                        <span class="review-product">Base Liquida HD Cover</span>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar" style="background: linear-gradient(135deg, #a0c0d8, #80a0b8);">
+                                <svg viewBox="0 0 40 40" width="24" height="24" fill="none" stroke="#fff" stroke-width="1.5">
+                                    <circle cx="20" cy="15" r="8"/><path d="M8 36 Q8 24 20 24 Q32 24 32 36"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Carolina Mendes</h4>
+                                <div class="review-stars">
+                                    <svg viewBox="0 0 20 20" width="14" height="14" fill="#d4a050"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                    <svg viewBox="0 0 20 20" width="14" height="14" fill="#d4a050"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                    <svg viewBox="0 0 20 20" width="14" height="14" fill="#d4a050"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                    <svg viewBox="0 0 20 20" width="14" height="14" fill="#d4a050"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                    <svg viewBox="0 0 20 20" width="14" height="14" fill="#d4a050"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                        <p>"O serum de vitamina C da Boticario transformou minha pele! Em duas semanas ja notei a diferenca."</p>
+                        <span class="review-product">Serum Vitamina C Iluminador</span>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar" style="background: linear-gradient(135deg, #d8a0c0, #b880a0);">
+                                <svg viewBox="0 0 40 40" width="24" height="24" fill="none" stroke="#fff" stroke-width="1.5">
+                                    <circle cx="20" cy="15" r="8"/><path d="M8 36 Q8 24 20 24 Q32 24 32 36"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Fernanda Costa</h4>
+                                <div class="review-stars">
+                                    <svg viewBox="0 0 20 20" width="14" height="14" fill="#d4a050"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                    <svg viewBox="0 0 20 20" width="14" height="14" fill="#d4a050"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                    <svg viewBox="0 0 20 20" width="14" height="14" fill="#d4a050"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                    <svg viewBox="0 0 20 20" width="14" height="14" fill="#d4a050"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                    <svg viewBox="0 0 20 20" width="14" height="14" fill="#d4a050" opacity="0.3"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                        <p>"A paleta da Vult tem cores lindas e super pigmentadas. O acabamento e profissional e facil de esfumar."</p>
+                        <span class="review-product">Paleta de Sombras Sunset Glow</span>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar" style="background: linear-gradient(135deg, #c0d8a0, #a0b880);">
+                                <svg viewBox="0 0 40 40" width="24" height="24" fill="none" stroke="#fff" stroke-width="1.5">
+                                    <circle cx="20" cy="15" r="8"/><path d="M8 36 Q8 24 20 24 Q32 24 32 36"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Isabela Rodrigues</h4>
+                                <div class="review-stars">
+                                    <svg viewBox="0 0 20 20" width="14" height="14" fill="#d4a050"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                    <svg viewBox="0 0 20 20" width="14" height="14" fill="#d4a050"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                    <svg viewBox="0 0 20 20" width="14" height="14" fill="#d4a050"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                    <svg viewBox="0 0 20 20" width="14" height="14" fill="#d4a050"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                    <svg viewBox="0 0 20 20" width="14" height="14" fill="#d4a050"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.33L10 13.27l-4.77 2.51.91-5.33L2.27 6.68l5.34-.78z"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                        <p>"Entrega rapida e o batom da Boca Rosa e exatamente como nas fotos. Cor vibrante e textura leve."</p>
+                        <span class="review-product">Batom Liquido Matte Velvet</span>
+                    </div>
+                </div>
+            </div>
+            <div class="reviews-dots" id="reviewsDots">
+                <span class="review-dot active" data-index="0"></span>
+                <span class="review-dot" data-index="1"></span>
+                <span class="review-dot" data-index="2"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter section">
+        <div class="container">
+            <div class="newsletter-content fade-in">
+                <div class="newsletter-text">
+                    <h2>Receba Novidades e Ofertas</h2>
+                    <p>Cadastre-se e ganhe 10% de desconto na primeira compra</p>
+                </div>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" placeholder="Seu melhor e-mail" required>
+                    <button type="submit" class="btn btn-primary">Cadastrar</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contato" class="contact section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-tag">Fale Conosco</span>
+                <h2>Entre em Contato</h2>
+                <p>Estamos aqui para ajudar voce</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info fade-in">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Endereco</h4>
+                            <p>Rua da Beleza, 123 - Sao Paulo, SP</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Telefone</h4>
+                            <p>(11) 9999-8888</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>E-mail</h4>
+                            <p>contato@glowbeauty.com.br</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Horario</h4>
+                            <p>Seg a Sex: 9h as 18h | Sab: 9h as 13h</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form fade-in" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" placeholder="Seu nome" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Seu e-mail" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Assunto">
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Sua mensagem" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <svg class="logo-icon" viewBox="0 0 60 60" width="32" height="32">
+                            <circle cx="30" cy="30" r="28" fill="none" stroke="#c8a2c8" stroke-width="2"/>
+                            <path d="M30 8 C20 8 12 18 12 28 C12 42 22 48 30 52 C38 48 48 42 48 28 C48 18 40 8 30 8Z" fill="#c8a2c8" opacity="0.3"/>
+                            <circle cx="30" cy="28" r="5" fill="#c8a2c8"/>
+                        </svg>
+                        <span>Glow<span class="logo-accent">Beauty</span></span>
+                    </div>
+                    <p>Sua loja de maquiagem e cuidados com a pele. Produtos de qualidade para realcar sua beleza natural.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="YouTube">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.43z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor" stroke="none"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Links Rapidos</h4>
+                    <ul>
+                        <li><a href="#home">Inicio</a></li>
+                        <li><a href="#produtos">Produtos</a></li>
+                        <li><a href="#categorias">Categorias</a></li>
+                        <li><a href="#skincare">Skincare</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Categorias</h4>
+                    <ul>
+                        <li><a href="#">Rosto</a></li>
+                        <li><a href="#">Labios</a></li>
+                        <li><a href="#">Olhos</a></li>
+                        <li><a href="#">Unhas</a></li>
+                        <li><a href="#">Acessorios</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Suporte</h4>
+                    <ul>
+                        <li><a href="#">Central de Ajuda</a></li>
+                        <li><a href="#">Politica de Troca</a></li>
+                        <li><a href="#">Rastrear Pedido</a></li>
+                        <li><a href="#">Termos de Uso</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>2026 Glow Beauty. Todos os direitos reservados.</p>
+                <p>Desenvolvido por Gabriel Barroso De Souza</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="18 15 12 9 6 15"/>
+        </svg>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
